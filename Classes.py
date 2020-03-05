@@ -1,20 +1,26 @@
 import pygame
 import random
 
+#defining variables with Bison Dos
+white = (255,255,255)
+black = (0,0,0)
+navy
+
 pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
 
 class Player:
-    def __init__(self, x, y, xsize, ysize):
+    def __init__(self, x, y, xsize, ysize, colour):
         self.x = x
         self.y = y
         self.xsize = xsize
         self.ysize = ysize
+        self.colour = colour
 
     def disp(self):
-        pygame.draw.rect(screen, (255, 255, 255), [self.x, self.y, self.xsize, self.ysize])
+        pygame.draw.rect(screen, self.colour, [self.x, self.y, self.xsize, self.ysize])
 
     def update(self):
         key = pygame.key.get_pressed()
@@ -28,7 +34,7 @@ class Player:
             self.y += 1
 
 
-Steve = Player(40, 40, 100, 100)
+Steve = Player(40, 40, 50, 50)
 
 running = True
 while running:
