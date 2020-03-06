@@ -25,23 +25,29 @@ class Player:
     def update(self):
         key = pygame.key.get_pressed()
         if key[pygame.K_w]:
-            self.y -= 1
-        if key[pygame.K_a]:
-            self.x -= 1
-        if key[pygame.K_s]:
-            self.y += 1
-        if key[pygame.K_d]:
-            self.x += 1 
-        if key[pygame.K_SHIFT] and [pygame.K_w]:
             self.y -= 2
-        if key[pygame.K_SHIFT] and [pygame.K_a]:
+        if key[pygame.K_a]:
             self.x -= 2
-        if key[pygame.K_SHIFT] and [pygame.K_s]:
+        if key[pygame.K_s]:
             self.y += 2
+        if key[pygame.K_d]:
+            self.x += 2 
+        if key[pygame.K_SHIFT] and [pygame.K_w]:
+            self.y -= 4
+        if key[pygame.K_SHIFT] and [pygame.K_a]:
+            self.x -= 4
+        if key[pygame.K_SHIFT] and [pygame.K_s]:
+            self.y += 4
         if key[pygame.K_SHIFT] and [pygame.K_d]:
-            self.x += 2
+            self.x += 4
         if key[pygame.K_CTRL] and [pygame.K_w]:
-            self.y -= 
+            self.y -= 1
+        if key[pygame.K_CTRL] and [pygame.K_a]:
+            self.x -= 1
+        if key[pygame.K_CTRL] and [pygame.K_s]:
+            self.y += 1
+        if key[pygame.K_CTRL] and [pygame.K_d]:
+            self.x += 1
 
 Steve = Player(40, 40, 50, 50)
 
