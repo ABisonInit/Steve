@@ -11,12 +11,18 @@ screen = pygame.display.set_mode((500, 500))
 
 #OOP
 class Display:
-    def __init__(self, classes, var):
+    def __init__(self, classes, var, colour, x, y, xsize, ysize):
         self.classes = classes
         self.var = var
+        self.colour = colour
+        self.x = x
+        self.y = y
+        self.xsize = xsize
+        self.ysize = ysize
     def dis(self):
-        self.classes.disp()
-        self.classes.update()
+        self.var = self.classes(self.x, self.y, self.xsize, self.ysize, self.colour)
+        self.var.disp()
+        self.var.update()
 
 class Player:
     def __init__(self, x, y, xsize, ysize, colour):
