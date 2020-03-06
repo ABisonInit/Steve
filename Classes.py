@@ -4,12 +4,19 @@ import random
 #defining variables with Bison Dos
 white = (255,255,255)
 black = (0,0,0)
-navy
-
+#Initializing and screen 
 pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
+#OOP
+class Display:
+    def __init__(self, classes, var):
+        self.classes = classes
+        self.var = var
+    def dis(self):
+        self.classes.disp()
+        self.classes.update()
 
 class Player:
     def __init__(self, x, y, xsize, ysize, colour):
@@ -49,8 +56,11 @@ class Player:
         if key[pygame.K_CTRL] and [pygame.K_d]:
             self.x += 1
 
+#Defining OOP
 Steve = Player(40, 40, 50, 50)
 
+
+#Running the Game
 running = True
 while running:
     for event in pygame.event.get():
