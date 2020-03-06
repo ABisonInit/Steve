@@ -31,8 +31,17 @@ class Player:
         if key[pygame.K_s]:
             self.y += 1
         if key[pygame.K_d]:
-            self.x += 1
-
+            self.x += 1 
+        if key[pygame.K_SHIFT] and [pygame.K_w]:
+            self.y -= 2
+        if key[pygame.K_SHIFT] and [pygame.K_a]:
+            self.x -= 2
+        if key[pygame.K_SHIFT] and [pygame.K_s]:
+            self.y += 2
+        if key[pygame.K_SHIFT] and [pygame.K_d]:
+            self.x += 2
+        if key[pygame.K_CTRL] and [pygame.K_w]:
+            self.y -= 
 
 Steve = Player(40, 40, 50, 50)
 
