@@ -9,20 +9,10 @@ pygame.init()
 
 screen = pygame.display.set_mode((500, 500))
 
-#OOP
-class Display:
-    def __init__(self, classes, var, colour, x, y, xsize, ysize):
-        self.classes = classes
-        self.var = var
-        self.colour = colour
-        self.x = x
-        self.y = y
-        self.xsize = xsize
-        self.ysize = ysize
-    def dis(self):
-        self.var = self.classes(self.x, self.y, self.xsize, self.ysize, self.colour)
-        self.var.disp()
-        self.var.update()
+def Display(classes, var, colour, x, y, xsize, ysize):
+    var = classes(x, y, xsize, ysize, colour)
+    var.disp()
+    var.update()
 
 class Player:
     def __init__(self, x, y, xsize, ysize, colour):
@@ -63,7 +53,7 @@ class Player:
             self.x += 1
 
 #Defining OOP
-Steve = Player(40, 40, 50, 50)
+Steve = Player(40, 40, 50, 50, white)
 
 
 #Running the Game
